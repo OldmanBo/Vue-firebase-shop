@@ -329,6 +329,7 @@
         <div class="product_added_modal" v-if="productSubmitted">
             <div class="addedProduct-container">
                 <h3>Product <strong>{{product.name}}</strong> added to the database</h3>
+                <p>Use this product ID for this product image name: <strong>{{ newProductId }}</strong></p>
                 <div v-for="(pr, pIndex) in product" :key="pr + pIndex">
                     <p v-if="pr">{{pIndex}}: {{ pr }}</p>
                 </div>
@@ -346,6 +347,7 @@ import 'firebase/firestore'
 export default {
     data() {
         return{
+            newProductId: '',
             productSubmitted: false,
             newClassModal: false,
             newClassName: '',
@@ -483,6 +485,7 @@ export default {
                 realtimeFirestore.collection('product slugs').doc('product slugs').update({
                     product_slugs: firebase.firestore.FieldValue.arrayUnion(docRef.id.toLowerCase())
                 })
+                this.newProductId = docRef.id
                 this.productSubmitted = true
             })
             .catch(err => {

@@ -133,9 +133,12 @@ export default {
                     order_id: docRef.id
                 })
                 console.log(docRef.id + ' is submitted')
+                this.order.order_id = docRef.id
             })
             .then(() => {
                 this.orderModal = true
+                console.log('This object is submited to the database ')
+                console.log(this.order)
             })
             .catch(err => {
                 console.log(err)
