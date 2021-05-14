@@ -437,10 +437,12 @@ export default {
 .old_price {
     color: gray;
     text-decoration: line-through;
+    white-space: nowrap;
 }
 .current_price {
     color: rgb(177, 29, 177);
     font-size: 2.3rem;
+    white-space: nowrap;
 }
 .basket_btn {
     background: hsl(216, 96%, 35%);
