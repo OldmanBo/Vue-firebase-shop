@@ -34,7 +34,7 @@
                   <div class="product" v-for="(sProduct, index) in filterredCategoryProducts" :key="sProduct + index">
                         <div class="product_image">
                             <router-link :to="{ name: 'ProductDetails', params: { productSlug: sProduct.slug } }">
-                                <img v-if="require(`../assets/${sProduct.product_id}.jpg`)" :src="require(`../assets/${sProduct.product_id}.jpg`)" alt="">
+                                <img :src="getImg(sProduct.product_id)" alt="">
                         </router-link>
                         </div>
                         <div class="product_info">
@@ -74,6 +74,14 @@ export default {
         }
     },
     methods: {
+        getImg(id) {
+            try {
+                require(`../assets/${id}.jpg`)
+                return  require(`../assets/${id}.jpg`)
+            } catch (error) {
+                return require(`../assets/no_img.png`)
+            }
+        },
         removeFilters() {
             for(let filter in this.activeFilterOptions) {
                 this.activeFilterOptions[filter] = []

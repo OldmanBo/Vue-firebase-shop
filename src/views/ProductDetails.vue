@@ -3,7 +3,7 @@
       <div class="product_details-container">
           <div class="pd_details-container">
               <div class="product_details_img">
-                  <img :src="require(`../assets/${product.product_id}.jpg`)" alt="product image"  v-if="product.product_id">
+                  <img :src="getImg(product.product_id)" alt="product image"  v-if="product.product_id">
                   <p v-if="!product.product_id">LOADING IMAGE...</p>
               </div>
               <div class="pd_product_info">
@@ -50,7 +50,7 @@
                   <div class="product" v-for="(sProduct, index) in sProducts" :key="sProduct.product_id + index">
                         <div class="product_image">
                             <router-link :to="{ name: 'ProductDetails', params: { productSlug: sProduct.slug } }">
-                                <img :src="require(`../assets/${sProduct.product_id}.jpg`)" alt="">
+                                <img :src="getImg(sProduct.product_id)" alt="">
                             </router-link>
                         </div>
                         <div class="product_info">
@@ -161,6 +161,14 @@ export default {
         })
     },
     methods: {
+        getImg(id) {
+            try {
+                require(`../assets/${id}.jpg`)
+                return  require(`../assets/${id}.jpg`)
+            } catch (error) {
+                return require(`../assets/no_img.png`)
+            }
+        },
         pushItemIntoBasket(productId) {
             this.$store.commit('pushToCart', productId)
         },

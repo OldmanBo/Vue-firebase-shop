@@ -16,7 +16,7 @@
                     <div class="product" v-for="(product, index) in sectionProducts[section.replaceAll(' ', '_')]" :key="index + product" 
                     :class="{product_active: prSlides[section.replaceAll(' ', '_')].includes(index)}" :style="{order: prSlides[section.replaceAll(' ', '_')].indexOf(index)}">
                         <router-link :to="{ name: 'ProductDetails', params: { productSlug: product.slug } }"><div class="product_image">
-                            <img :src="require(`../assets/${product.product_id}.jpg`)" alt="">
+                            <img :src="getImg(product.product_id)" alt="">
                         </div></router-link>
                         <div class="product_info">
                             <p class="product_title">{{ product.name }}</p>
@@ -76,6 +76,14 @@ export default {
         }
     },
     methods: {
+        getImg(id) {
+            try {
+                require(`../assets/${id}.jpg`)
+                return  require(`../assets/${id}.jpg`)
+            } catch (error) {
+                return require(`../assets/no_img.png`)
+            }
+        },
         pushItemIntoBasket(productId) {
             this.$store.commit('pushToCart', productId)
         },

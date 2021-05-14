@@ -9,7 +9,7 @@
               <div class="sm-continer">
                   <div class="product" v-for="(sProduct, index) in categoryProducts" :key="sProduct + index">
                         <div class="product_image">
-                            <router-link :to="{ name: 'ProductDetails', params: { productSlug: sProduct.slug } }"><img :src="require(`../assets/${sProduct.product_id}.jpg`)" alt=""></router-link>
+                            <router-link :to="{ name: 'ProductDetails', params: { productSlug: sProduct.slug } }"><img :src="getImg(sProduct.product_id)" alt=""></router-link>
                         </div>
                         <div class="product_info">
                             <p class="product_title">{{ sProduct.name }}</p>
@@ -46,6 +46,14 @@ export default {
         pushItemIntoBasket(productId) {
             this.$store.commit('pushToCart', productId)
         },
+        getImg(id) {
+            try {
+                require(`../assets/${id}.jpg`)
+                return  require(`../assets/${id}.jpg`)
+            } catch (error) {
+                return require(`../assets/no_img.png`)
+            }
+        }
     },
     created() {
         realtimeFirestore.collection('products')
