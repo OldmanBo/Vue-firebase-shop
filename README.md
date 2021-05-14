@@ -3,8 +3,8 @@
 # IMPORTANT
     This app does not have a responsive design, since my main goal was to test and develop better vue and firebase skills.
 
-    After adding a new product from the admin console, it is crucial to add a JPG image in the "assets" folder, and name that image after the product ID(the ID will be shown after the product addition).
-    If no image is added for the new product, the page containing that product will not work properly.
+    After adding a new product from the admin console, you should add a JPG image in the "assets" folder, and name that image after the product ID(the ID will be shown after the product addition).
+    Otherwise, it will show the deafult "No image" image.
 
     Furthermore, since i am not that familiar with the page authentication there is no disctinction between the imaginary customer and the imaginary page admin.
     I have created the admin console to work on my CRUD(Create, Read, Update, Delete) skills and to get more familiar with the firebase firestore.
