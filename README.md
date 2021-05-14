@@ -1,6 +1,8 @@
 # pc-shop
 
 # IMPORTANT
+    This app does not have a responsive design, since my main goal was to test and develop better vue and firebase skills.
+
     After adding a new product from the admin console, it is crucial to add a JPG image in the "assets" folder, and name that image after the product ID(the ID will be shown after the product addition).
     If no image is added for the new product, the page containing that product will not work properly.
 
@@ -14,11 +16,13 @@
     The imaginary page admin can add and delete product classes for the index page (Hot Products and Discounts are the basic ones), 
     also there is the option for adding new products and deleting or edditing the existing ones. 
 
-    Also, there is some dynamic page routing done with the use of vue router, and with the addiitonal use of route guards to watch for the existing and none-existing url slugs. 404 error page is also working.
-
+    Also, there is some dynamic page routing done with the use of vue router, and with the addiitonal use of navigation guards to watch for the existing and none-existing url slugs. 404 error page is also working.
+    
     This is still a work in progress, and i know that there is still a lot to be learned. Hopefully, as i continue to develop my developer skills, this project will become bug free. :D
 
 ## Project setup
+
+ Run the npm install in the terminal to install all of the listed dependencies from the json file.
 ```
 npm install
 ```
