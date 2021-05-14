@@ -321,6 +321,9 @@ export default {
     border-radius: 2%;
     box-shadow: inset 0px 0px 5px 2px skyblue;
     margin: 5px;
+    flex-basis: 0;
+    flex-grow: 1;
+    flex-shrink: 1;
 }
 .product.product_active {
     display: block;

@@ -47,7 +47,7 @@
           <div class="similar_products">
               <h3>Similar Products</h3>
               <div class="sm-continer">
-                  <div class="product" v-for="(sProduct, index) in sProducts" :key="sProduct + index">
+                  <div class="product" v-for="(sProduct, index) in sProducts" :key="sProduct.product_id + index">
                         <div class="product_image">
                             <router-link :to="{ name: 'ProductDetails', params: { productSlug: sProduct.slug } }">
                                 <img :src="require(`../assets/${sProduct.product_id}.jpg`)" alt="">
@@ -67,24 +67,24 @@
                     </div>
               </div>
           </div>
-          <div class="comment_section">
+          <form class="comment_section" @submit.prevent="postComment">
               <h3>Comments</h3>
               <label for="commentName">Your name: </label>
-              <input class="comment_name" type="text" name="commentName" v-model="commentName">
+              <input class="comment_name" type="text" name="commentName" v-model="commentName" required>
               <label for="userComment">Your comment: </label>
-              <textarea name="userComment" cols="30" rows="10" v-model="userComment"></textarea>
+              <textarea name="userComment" cols="30" rows="10" v-model="userComment" required></textarea>
               <label class="ratingLabel" for="productRating">Your rating: </label>
               <div class="product_rating-container" v-for="(rating, index) in productRatingChoices" :key="rating + index">
-                <input class="product_rating" type="radio" name="productRating" :value="index + 1" v-model="productRating">
+                <input class="product_rating" type="radio" name="productRating" :value="index + 1" v-model="productRating" required>
                 <span class="product_rating_overlay" :class="{pro_active: index + 1 <= productRating}"></span>
               </div>
-              <button type="button" @click="postComment">Post comment</button>
+              <button >Post comment</button>
               <div class="comment_modal" v-if="commentSubmitted">
                   <h2>Your comment has ben submitted</h2>
                   <button type="button" @click="$router.go()">Return to the site</button>
               </div>
-          </div>
-          <div class="user_comments" v-for="(uComment, uCIndex) in productComments" :key="uComment + uCIndex">
+          </form>
+          <div class="user_comments" v-for="(uComment, uCIndex) in productComments" :key="uComment.comment_id + uCIndex">
               <h4><span>Customer:</span> {{ uComment.user }}</h4>
               <p>Product rating: {{ uComment.rating }}</p>
               <p>{{ uComment.comment }}</p>
@@ -150,6 +150,9 @@ export default {
             .then(qSnap => {
                 qSnap.forEach(doc => {
                     this.productComments.push(doc.data())
+                })
+                this.productComments.sort((a, b) => {
+                    return b.timestamp - a.timestamp
                 })
             })
         .catch(err => {
