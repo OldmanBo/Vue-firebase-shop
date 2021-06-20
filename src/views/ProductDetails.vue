@@ -564,4 +564,112 @@ export default {
     margin-top: 15px;
     text-align: right;
 }
+
+@media only screen and (max-width: 1024px) {
+    .product_details_page {
+        padding: 0 5%;
+    }
+    .pd_details-container {
+        justify-content: center;
+    }
+}
+@media only screen and (max-width: 768px) {
+    .pd_details-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .product_details_img {
+        margin-right: 20px;
+        width: 70%;
+        max-width: 300px;
+    }
+    .product_details_img img {
+        height: auto;
+    }
+    .pd_product_discount_price,
+    .pd_product_price,
+    .pd_saving,
+    .pd_product_discount {
+        font-size: 0.9rem;
+    }
+    .pd_product_info p {
+        margin: 5px 0
+    }
+    .pd_product_info h3 {
+        font-size: 0.95rem;
+    }
+    .pd_product_discount_price span,
+    .pd_product_price span {
+        display:block;
+        font-size: 1.5rem;
+    }
+    #productId {
+        font-size: 0.75rem;
+        margin: 5px 0;
+    }
+    .pd_buttons-container {
+        margin-top: 15px;
+    }
+    .pd_basket_btn {
+        font-size: 0.8rem;
+        padding: 5px 4px;
+        margin: 0 5px;
+        width: 130px;
+    }
+    .compare_btn {
+        font-size: 0.8rem;
+        padding: 5px 4px;
+    }
+    .pd_socials-container span {
+        font-size: 1rem;
+        width: 100%;
+        display: block;
+        text-align: center;
+        order: 1;
+        margin-bottom: 15px;
+    }
+    .fb_btn {
+        order: 2;
+        font-size: 0.7rem;
+    }
+    .share_btn {
+        order: 3;
+        font-size: 0.7rem;
+    }
+    .pd_socials-container {
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 10px;
+    }
+    .pd_detailed_info p,
+    .user_comments p {
+        font-size: 0.8rem;
+    }
+    .comment_section label {
+        font-size: 0.68rem;
+    }
+    .comment_section h3,
+    .pd_detailed_info h3 {
+        font-size: 0.97rem;
+    }
+    .user_comments h4 {
+        font-size: 0.78rem;
+    }
+    .user_comments p:nth-child(2) {
+        font-size: 0.9rem;
+    }
+    .product_details_page .sm-continer {
+        flex-wrap: wrap;
+    }
+}
+@media only screen and (max-width: 500px) {
+    .comment_section button {
+        display: block;
+        position: relative;
+        bottom: unset;
+        right: unset;
+        margin: 10px 0 0 0;
+    }
+}
 </style>

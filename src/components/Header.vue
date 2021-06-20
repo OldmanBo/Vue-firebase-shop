@@ -37,12 +37,12 @@
               </transition>
           </div>
           <div class="links-container">
-              <router-link :to="{ name: 'Payment' }">Payment</router-link>|
-              <router-link :to="{ name: 'Blog' }">Blog</router-link> |
+              <router-link :to="{ name: 'Payment' }">Payment</router-link>
+              <router-link :to="{ name: 'Blog' }">Blog</router-link> 
               <router-link :to="{ name: 'ProductConsole' }">Admin Console</router-link>
           </div>
           <div class="phone-container">
-              <p>tel: 010 111 111; 010 222 222</p>
+              <p>tel: <span>010 111 111</span><span> 010 222 222</span></p>
           </div>
       </div>
   </header>
@@ -136,7 +136,7 @@ header {
     display: flex;
     align-items: center;
     position: relative;
-    width: 80%;
+    width: 60%;
     max-width: 600px;
 }
 .search_bar-container input {
@@ -345,5 +345,125 @@ header {
 }
 .links-container a:hover {
     color:#559E54;
+}
+.phone-container span + span::before {
+    content: ' | ';
+}
+
+@media only screen and (max-width: 1280px) {
+    .header_main {
+        padding: 0 5%;
+    }
+    .header_info {
+        padding: 7px 5%;
+    }
+}
+@media only screen and (max-width: 1024px) {
+    .logo {
+        font-size: 2.65rem;
+    }
+    .logo svg {
+        font-size: 1.7rem;
+        max-width: 50px;
+    }
+    .header_btn-container button {
+        font-size: 1.65rem;
+        width: 27px;
+        height: 42px;
+    }
+    .search_bar-container select {
+        font-size: 0.83rem;
+    }
+    .search_btn {
+        font-size: 0.83rem;
+    }
+    .product_link {
+        font-size: 0.83rem;
+    }
+    .menu_btn {
+        font-size: 0.83rem;
+    }
+    .drop_down_menu_category p {
+        font-size: 0.8rem;
+    }
+    .drop_down_menu_subcategory p {
+        font-size: 0.75rem;
+    }
+    .cart_btn span {
+        font-size: 0.83rem;
+    }
+    .links-container p {
+        font-size: 0.83rem;
+    }
+    .links-container a {
+        font-size: 0.83rem;
+        text-decoration: underline;
+    }
+    .phone-container p {
+        font-size: 0.83rem;
+    }
+}
+@media only screen and (max-width: 768px) {
+    header {
+        padding: 5px 0px;
+    }
+    .header_info {
+        justify-content: space-between;
+    }
+    .search_bar-container {
+        width: 40%;
+    }
+    .search_bar-container select {
+        display: none;
+    }
+    .search_bar-container input {
+        width: 100%;
+        border-radius: 20px;
+    }
+    .links-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    .menu_btn  {
+        width: 25px;
+        overflow: hidden;
+        white-space: nowrap;
+    }
+    .drop_down_menu {
+        top: 45px;
+        left: -150%;
+    }
+    .phone-container p{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        font-size: 0.83re;
+    }
+    .phone-container span + span::before {
+        content: '';
+    }
+}
+@media only screen and (max-width: 500px) {
+    .header_main {
+        padding: 0 2%;
+    }
+    .logo {
+        font-size: 2.0rem;
+    }
+    .logo svg {
+        font-size: 1.5rem;
+        max-width: 35px;
+    }
+    .drop_down_menu {
+        position: fixed;
+        left: 0;
+        top: 103px;
+        flex-direction: column;
+        overflow: auto;
+        height: calc(100vh - 104px);
+    }
+    .drop_down_menu_parent_category {
+    border-left: 1px solid #11335A;
+}
 }
 </style>

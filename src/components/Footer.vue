@@ -2,18 +2,18 @@
   <footer>
       <div class="about_us_footer-container">
           <div class="basics_footer">
-              <router-link :to="{name: 'Index'}">
-              <div class="logo">
-                  <p class="">Bobo</p>
-                  <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122"></path></svg>
-              </div>
-          </router-link>
-          <p class="logo_moto">Enriching your life with modern tech!</p>
-              <ul>
-                  <li>BoboSystemsTech Ltd.</li>
-                  <li>Here goes our Adress</li>
-                  <li>And here goes more of our address</li>
-              </ul>
+            <router-link :to="{name: 'Index'}">
+                <div class="logo">
+                    <p class="">Bobo</p>
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122"></path></svg>
+                </div>
+            </router-link>
+            <p class="logo_moto">Enriching your life with modern tech!</p>
+            <ul>
+                <li>BoboSystemsTech Ltd.</li>
+                <li>Here goes our Adress</li>
+                <li>And here goes more of our address</li>
+            </ul>
           </div>
           <div class="links_footer">
               <h5>Info</h5>
@@ -112,4 +112,85 @@ footer h6 + ul {
     text-align: center;
 }
 
+
+@media only screen and (max-width: 1280px) {
+    footer {
+        padding: 50px 5% 25px 5%;
+    }
+}
+@media only screen and (max-width: 1024px) {
+    footer h5 {
+        font-size: 1rem;
+    }
+    footer h6 {
+        font-size: 0.75rem;
+    }
+    footer li {
+        font-size: 0.85rem;
+    }
+    .logo_moto {
+        font-size: 0.85rem;
+        margin-top: 0;
+    }
+    .info_footer p {
+        font-size: 0.85rem;
+    }
+}
+@media only screen and (max-width: 500px) {
+    .about_us_footer-container {
+        display: grid;
+        grid-template-rows: auto auto;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    .basics_footer {
+        grid-row: 1 / 2;
+        grid-column: 1 / 4;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+        justify-content: center;
+        align-items: start;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    .basics_footer a, .basics_footer .logo_moto {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+    }
+    .basics_footer ul {
+        grid-column: 2 / 3;
+        grid-row: 1 / 2;
+        text-align: center;
+    }
+    .links_footer, .contact_footer, .socials_footer {
+        grid-row: 2 / 3;
+        text-align: center;
+    }
+    footer h5 {
+        font-size: 0.7rem;
+    }
+    footer h6 {
+        font-size: 0.6rem;
+    }
+    footer li {
+        font-size: 0.7rem;
+    }
+    .logo_moto {
+        font-size: 0.7rem;
+        margin-top: 38px;
+        margin-bottom: 0;
+    }
+    .info_footer p {
+        font-size: 0.7rem;
+    }
+    footer li {
+        margin: 3px 0;
+    }
+    footer h6 + ul {
+        margin: 5px 0 10px 0;
+    }
+    footer h5 {
+        margin-bottom: 10px;
+    }
+}
 </style>

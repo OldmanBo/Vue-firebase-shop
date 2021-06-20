@@ -26,8 +26,10 @@
                         <button type="button" class="basket_btn" @click="pushItemIntoBasket(product.product_id)"><div class="svg_shadow"></div><svg class="w-6 h-6 cart_btn_svg" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z"></path></svg></button>
                         <div class="product_discount_info-container" v-if="product.discount > 0">
                                 <p class="product_discount_info">DISCOUNT <span>{{product.discount}}%</span></p>
-                                <div class="pink_triangle"></div>
-                                <div class="white_triangle"></div>
+                                <div class="white_triangle">
+                                    <div class="pink_triangle"></div>
+                                    <div class="blue_triangle"></div>
+                                </div>
                         </div>
                     </div>
                 </div>
@@ -322,7 +324,7 @@ export default {
     display: none;
     position:relative;
     max-width: 300px;
-    min-width: 250px;
+    min-width: 220px;
     height: 516px;
     padding: 50px 10px 0 10px;
     border: 1px solid rgba(109, 168, 204, 0.575);
@@ -339,7 +341,6 @@ export default {
 .product_discount_info {
     font-size: 1.2rem;
     color: white;
-
 }
 .product_discount_info-container {
     position: absolute;
@@ -354,22 +355,37 @@ export default {
     box-shadow: 0 0 5px pink;
     content: '';
     position: absolute;
-    width: 30px;
-    height: 30px;
-    transform: rotate(45deg);
-    left: 178px;
-    bottom: -18px;
+    width: 50%;
+    height: 100%;
+    /* transform: rotate(45deg); */
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+    left: 0;
+    bottom: -50%;
+}
+.blue_triangle {
+    background: hsl(216, 96%, 35%);
+    box-shadow: 0 0 5px hsl(216, 96%, 35%);
+    content: '';
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    /* transform: rotate(45deg); */
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+    right: -1px;
+    top: -50%;
 }
 .white_triangle {
     background: white;
-    box-shadow: 0 0 5px white;
+    box-shadow: 0 0 5px 10px white;
     content: '';
     position: absolute;
-    width: 30px;
-    height: 30px;
-    transform: rotate(45deg);
-    top: -1px;
-    left: 199px;
+    width: 60px;
+    height: 108%;
+    /* transform: rotate(45deg); */
+    /* clip-path: polygon(40% 0, 60% 0, 100% 50%, 53% 100%, 47% 100%, 0% 50%); */
+    clip-path: polygon(48% 0, 100% 0%, 52% 100%, 0 100%);
+    top: -3px;
+    left: calc(70% - 20px);
 }
 .product_discount_info {
     background: hsl(216, 96%, 35%);
@@ -391,8 +407,9 @@ export default {
     top: 0;
     line-height: 1.5;
     width: 30%;
-    padding-right: 10px;
+    padding-right: 5px;
     text-shadow: 0 0 2px rgb(177, 29, 177);
+    z-index: 5;
 }
 .product_image {
     border: 2px solid transparent;
@@ -484,5 +501,92 @@ export default {
     left: 50%;
     transform: translate(-52%, -2px);
     transition: box-shadow 250ms ease-in, background 250ms ease-in;
+}
+
+@media only screen and (max-width: 1366px) {
+    .products_section_slider {
+        flex-wrap: wrap;
+        max-height: 520px;
+        overflow: hidden;
+    }
+}
+@media only screen and (max-width: 1280px) {
+    .index_products_container {
+        padding: 0 5%;
+    }
+
+}
+@media only screen and (max-width: 1024px) {
+    .slide {
+        min-height: 500px;
+        display: flex;
+    }
+    .slide a {
+        width: 100%;
+    }
+    .carousel-container button {
+        font-size: 1rem;
+    }
+    .products_section_title {
+        font-size: 1.9rem;
+    }
+    .product_discount_info {
+        font-size: 1rem;
+    }
+    .product_discount_info span {
+        right: 10px;
+    }
+    .current_price {
+        font-size: 1.9rem;
+    }
+    .basket_btn {
+        font-size: 0.83rem;
+    }
+    .product {
+        min-width: 250px;
+    }
+    .white_triangle {
+        top: -2px;
+    }
+    .index_slider_btns {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+}
+@media only screen and (max-width: 768px) {
+    .products_section_slider {
+        justify-content: center;
+        max-height: 470px;
+    }
+    .product {
+        min-width: 250px;
+        height: 460px;
+    }
+    .product_title {
+        margin-bottom: 4px;
+        margin-top: 4px;
+    }
+    .product_image {
+        text-align: center;
+        max-height: 250px;
+        min-height: 240px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .product_image img {
+        width: 90%;
+        height: 100%;
+        max-height: 240px;
+    }
+    .index_slider_btns {
+        padding-top: 10px;
+    }
+}
+@media only screen and (max-width: 500px) {
+    .slide {
+        min-height: 300px;
+        max-height: 300px;
+    }
 }
 </style>

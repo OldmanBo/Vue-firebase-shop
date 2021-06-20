@@ -24,4 +24,9 @@ export default {
     font-weight: bold;
 }
 
+@media only screen and (max-width: 768px) {
+    .payment_page {
+        padding: 0 5%;
+    }
+}
 </style>

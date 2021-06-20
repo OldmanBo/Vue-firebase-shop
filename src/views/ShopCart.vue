@@ -283,4 +283,43 @@ export default {
     box-shadow: 0 0 20px 5px rgba(29, 26, 190, 0.705);
 }
 
+@media only screen and (max-width: 768px) {
+    .shop_cart_page {
+        padding: 0 5%;
+    }
+    .shop_cart_page h1 {
+        font-size: 1.6rem;
+        margin: 10px 0;
+    }
+    .shop_cart_page h2 {
+        font-size: 1.25rem;
+    }
+    .buy_btn, 
+    .shop_cart_page label {
+        font-size: 0.8rem;
+    }
+    .order_notificaiton_modal p {
+        font-size: 1.6rem;
+    }
+    .shop_cart_page th,
+    .shop_cart_page td,
+    .shop_cart_page form button {
+        font-size: 0.8rem;
+    }
+
+}
+@media only screen and (max-width: 500px) {
+    .shop_cart_page {
+        padding: 0 3%;
+    }
+    .shop_cart_page table td,
+    .shop_cart_page table th {
+        padding: 1.5px;
+        font-size: 0.7rem;
+    }
+    .shop_cart_page label,
+    .shop_cart_page input {
+        font-size: 0.7rem;
+    }
+}
 </style>

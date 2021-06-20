@@ -44,4 +44,26 @@ export default {
 .blog_details_info {
     width: 75%;
 }
+
+@media only screen and (max-width: 1024px) {
+    .blog_details_page {
+        padding: 50px 10%;
+    }
+}
+@media only screen and (max-width: 768px) {
+    .blog_details_page {
+        padding: 100px 5%;
+        margin-top: 25px;
+    }
+}
+@media only screen and (max-width: 500px) {
+    .blog_details {
+        flex-direction: column;
+        align-items: center;
+    }
+    .blog_details_img {
+       width: 50%;
+       margin: 0;
+    }
+}
 </style>

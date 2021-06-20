@@ -69,4 +69,33 @@ export default {
     .blog_card a:hover {
         color:orange
     }
+
+    @media only screen and (max-width: 1024px) {
+        .blog_page {
+            padding: 0 5%;
+        }
+    }
+    @media only screen and (max-width: 768px) {
+        .blog_card {
+            padding: 20px;
+        }
+        .blog_card_info {
+            margin-left: 20px;
+        }
+        .blog_card_title {
+            font-size: 1.6rem;
+        }
+        .blog_card_text,
+        .blog_card_link {
+            font-size: 0.8rem;
+        }
+    }
+    @media only screen and (max-width: 500px) {
+        .blog_card_img {
+            display: none;
+        }
+        .blog_card_info {
+            width: 100%;
+        }
+    }
 </style>
