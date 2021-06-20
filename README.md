@@ -1,8 +1,6 @@
 # pc-shop
 
 # IMPORTANT
-    This app does not have a responsive design, since my main goal was to test and develop better vue and firebase skills.
-
     After adding a new product from the admin console, you should add a JPG image in the "assets" folder, and name that image after the product ID(the ID will be shown after the product addition).
     Otherwise, it will show the deafult "No image" image.
 
@@ -20,9 +18,10 @@
     
     This is still a work in progress, and i know that there is still a lot to be learned. Hopefully, as i continue to develop my developer skills, this project will become bug free. :D
 
+    -- Added responsiveness to accommodate smaller screens for all pages, except the admin page.
 ## Project setup
 
- Run the npm install in the terminal to install all of the listed dependencies from the json file.
+ To install all the needed dependencies
 ```
 npm install
 ```
