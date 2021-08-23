@@ -1,4 +1,33 @@
 # pc-shop
+#### Working carousels
+<img src='/showcase_gif_files/Example1.gif' width= 1000px>  
+
+#### Blogs
+<img src='/showcase_gif_files/Example2.gif' width= 1000px>  
+
+#### Navigation and product sorting
+<img src='/showcase_gif_files/Example3.gif' width= 1000px>  
+
+#### Product filtering
+<img src='/showcase_gif_files/Example5.gif' width= 1000px>  
+
+#### Product rating and comments    
+    - The comments are stored in the firebase database
+<img src='/showcase_gif_files/Example4.gif' width= 1000px> 
+
+#### Shop cart      
+    - The order goes to firebase database
+<img src='/showcase_gif_files/Example6.gif' width= 1000px>  
+
+#### Adding new products to the database
+<img src='/showcase_gif_files/Example7.gif' width= 1000px>  
+
+#### Adding new sale classes for the home page
+<img src='/showcase_gif_files/Example8.gif' width= 1000px>  
+
+#### Editing and deleting products
+<img src='/showcase_gif_files/Example9.gif' width= 1000px>  
+
 
 # IMPORTANT
     After adding a new product from the admin console, you should add a JPG image in the "assets" folder, and name that image after the product ID(the ID will be shown after the product addition).
