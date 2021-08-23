@@ -30,6 +30,7 @@
 
 
 # IMPORTANT
+    This is not my web design, i have taken the template from a local pc shop and tried to add some more life to it with animations and transition efefcts.
     After adding a new product from the admin console, you should add a JPG image in the "assets" folder, and name that image after the product ID(the ID will be shown after the product addition).
     Otherwise, it will show the deafult "No image" image.
 
