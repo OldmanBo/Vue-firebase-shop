@@ -33,7 +33,7 @@
     After adding a new product from the admin console, you should add a JPG image in the "assets" folder, and name that image after the product ID(the ID will be shown after the product addition).
     Otherwise, it will show the deafult "No image" image.
 
-    Furthermore, since i am not that familiar with the page authentication there is no disctinction between the imaginary customer and the imaginary page admin.
+    Furthermore, since i was not familiar with the page authentication when i made this project, there is no disctinction between the imaginary customer and the imaginary page admin.
     I have created the admin console to work on my CRUD(Create, Read, Update, Delete) skills and to get more familiar with the firebase firestore.
 
     An imaginary customer can use the product rating system (one can rate the products and write comments about them).
